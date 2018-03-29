@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vlas Sokolov</title>
+    <link>https://vlas-sokolov.github.io/</link>
+    <description>Recent content on Vlas Sokolov</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>vsokolov@mpe.mpg.de (Vlas Sokolov)</managingEditor>
+    <webMaster>vsokolov@mpe.mpg.de (Vlas Sokolov)</webMaster>
+    <lastBuildDate>Wed, 28 Mar 2018 16:13:53 +0200</lastBuildDate>
+    
+	<atom:link href="https://vlas-sokolov.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>About</title>
+      <link>https://vlas-sokolov.github.io/page/about/</link>
+      <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
+      <author>vsokolov@mpe.mpg.de (Vlas Sokolov)</author>
+      <guid>https://vlas-sokolov.github.io/page/about/</guid>
+      <description>img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
+Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>
+    </item>
+    
+    <item>
+      <title>New webpage! What can it do?</title>
+      <link>https://vlas-sokolov.github.io/post/testing/</link>
+      <pubDate>Tue, 27 Mar 2018 15:51:20 +0200</pubDate>
+      <author>vsokolov@mpe.mpg.de (Vlas Sokolov)</author>
+      <guid>https://vlas-sokolov.github.io/post/testing/</guid>
+      <description>&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
+
+&lt;p&gt;Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:&lt;/p&gt;
+
+&lt;p&gt;$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 , $$&lt;/p&gt;
+
+&lt;p&gt;although I can&amp;rsquo;t get inline math mode to render: $x = \frac{1}{2}$ yet.&lt;/p&gt;
+
+&lt;h2 id=&#34;using-font-awesome&#34;&gt;Using Font Awesome&lt;/h2&gt;
+
+&lt;p&gt;Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.&lt;/p&gt;
+
+&lt;ul class=&#34;fa-ul&#34;&gt;
+  &lt;li&gt;&lt;i class=&#34;fa-li fa fa-graduation-cap&#34;&gt;&lt;/i&gt;&lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; provides free, clean, and beautiful icon set&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&#34;fa-li fa fa-btc&#34;&gt;&lt;/i&gt;Even though the icon set is mainly for web-design...&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&#34;fa-li fa fa-graduation-cap&#34;&gt;&lt;/i&gt;... it has some academic icons as well&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&#34;fa-li fa fa-bomb fa-spin&#34;&gt;&lt;/i&gt;and it even supports animated icons!&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
