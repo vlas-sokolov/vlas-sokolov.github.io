@@ -6,18 +6,27 @@
     <description>Recent content on Vlas Sokolov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vsokolov@mpe.mpg.de (Vlas Sokolov)</managingEditor>
-    <webMaster>vsokolov@mpe.mpg.de (Vlas Sokolov)</webMaster>
-    <lastBuildDate>Wed, 28 Mar 2018 16:13:53 +0200</lastBuildDate>
+    <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
+    <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
+    <lastBuildDate>Wed, 09 May 2018 16:06:27 +0200</lastBuildDate>
     
 	<atom:link href="https://vlas-sokolov.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>Gaia H-R diagrams</title>
+      <link>https://vlas-sokolov.github.io/post/gaia-dr2-hrd/</link>
+      <pubDate>Wed, 09 May 2018 16:06:27 +0200</pubDate>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
+      <guid>https://vlas-sokolov.github.io/post/gaia-dr2-hrd/</guid>
+      <description>What is the saddest part about being a star? Pretty much everything about your life is determined by how much you weigh at birth. Once a star is born, its energy output is mainly governed by two forces: gravity, acting inwards, and the fusion core of the star, pushing outwards. As the delicate balance between the two sets the size and the surface temperature of the star, the color and brightness of the star are used by astronomers to determine not only how massive the star is, but also what kind of fuel it burns at its core.</description>
+    </item>
+    
+    <item>
       <title>About</title>
       <link>https://vlas-sokolov.github.io/page/about/</link>
       <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
-      <author>vsokolov@mpe.mpg.de (Vlas Sokolov)</author>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas-sokolov.github.io/page/about/</guid>
       <description>img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
 Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>
@@ -27,7 +36,7 @@ Interests Galactic star formation in infrared dark clouds Bayesian inference, da
       <title>New webpage! What can it do?</title>
       <link>https://vlas-sokolov.github.io/post/testing/</link>
       <pubDate>Tue, 27 Mar 2018 15:51:20 +0200</pubDate>
-      <author>vsokolov@mpe.mpg.de (Vlas Sokolov)</author>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas-sokolov.github.io/post/testing/</guid>
       <description>&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
 

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vlas-sokolov.github.io/post/gaia-dr2-hrd/</loc>
+    <lastmod>2018-05-09T16:06:27+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vlas-sokolov.github.io/page/about/</loc>
     <lastmod>2018-03-28T16:13:53+02:00</lastmod>
   </url>
@@ -25,7 +30,7 @@
   
   <url>
     <loc>https://vlas-sokolov.github.io/post/</loc>
-    <lastmod>2018-03-27T15:51:20+02:00</lastmod>
+    <lastmod>2018-05-09T16:06:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -36,7 +41,7 @@
   
   <url>
     <loc>https://vlas-sokolov.github.io/</loc>
-    <lastmod>2018-03-28T16:13:53+02:00</lastmod>
+    <lastmod>2018-05-09T16:06:27+02:00</lastmod>
     <priority>0</priority>
   </url>
   

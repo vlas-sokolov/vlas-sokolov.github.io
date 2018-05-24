@@ -6,8 +6,8 @@
     <description>Recent content in Pages on Vlas Sokolov</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <managingEditor>vsokolov@mpe.mpg.de (Vlas Sokolov)</managingEditor>
-    <webMaster>vsokolov@mpe.mpg.de (Vlas Sokolov)</webMaster>
+    <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
+    <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
     <lastBuildDate>Wed, 28 Mar 2018 16:13:53 +0200</lastBuildDate>
     
 	<atom:link href="https://vlas-sokolov.github.io/page/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <title>About</title>
       <link>https://vlas-sokolov.github.io/page/about/</link>
       <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
-      <author>vsokolov@mpe.mpg.de (Vlas Sokolov)</author>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas-sokolov.github.io/page/about/</guid>
       <description>img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
 Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>

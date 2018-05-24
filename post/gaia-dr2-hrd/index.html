@@ -5,24 +5,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>About</title>
-  <meta property="og:title" content="About" />
-  <meta name="twitter:title" content="About" />
-  <meta name="description" content="img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
-Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.">
-  <meta property="og:description" content="img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
-Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.">
-  <meta name="twitter:description" content="img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star …">
+  <title>Gaia H-R diagrams</title>
+  <meta property="og:title" content="Gaia H-R diagrams" />
+  <meta name="twitter:title" content="Gaia H-R diagrams" />
+  <meta name="description" content="Querying Gaia data for one million nearby stars">
+  <meta property="og:description" content="Querying Gaia data for one million nearby stars">
+  <meta name="twitter:description" content="Querying Gaia data for one million nearby stars">
   <meta name="author" content="Vlas Sokolov"/>
   <meta property="og:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://vlas-sokolov.github.io/page/about/" />
+  <meta property="og:url" content="https://vlas-sokolov.github.io/post/gaia-dr2-hrd/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vlas Sokolov" />
 
   <meta name="generator" content="Hugo 0.38-DEV" />
-  <link rel="canonical" href="https://vlas-sokolov.github.io/page/about/" />
+  <link rel="canonical" href="https://vlas-sokolov.github.io/post/gaia-dr2-hrd/" />
   <link rel="alternate" href="https://vlas-sokolov.github.io/index.xml" type="application/rss+xml" title="Vlas Sokolov">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -158,9 +156,27 @@ Interests Galactic star formation in infrared dark clouds Bayesian inference, da
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="page-heading">
-              <h1>About</h1>
+            <div class="post-heading">
+              <h1>Gaia H-R diagrams</h1>
                 
+                  
+                    <h2 class="post-subheading">Querying Gaia data for one million nearby stars</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on May 9, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 5 minutes (961 words)
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -175,61 +191,115 @@ Interests Galactic star formation in infrared dark clouds Bayesian inference, da
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <p><style> img {border-radius: 50%;} </style>
-<div style="float: left; width: 30%; border: 5px solid transparent;">
-    <img src="/page/about/viaferrata.jpg" width="99%"/>
-</div>
-<div style="float: left; width: 5%; height: 10%; border: 5px solid transparent;"></div>
-<div style="float: left; width: 64%; border: 5px solid transparent;">
-    An astrophysics Ph.D. student based in Munich, Germany.
-    I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation.
-    Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.
-</div>
-<div style="clear: both; height: 0px; border: 5px solid transparent;"></div></p>
+        <p>What is the saddest part about being a star? Pretty much everything about your life is determined by how much you weigh at birth. Once a star is born, its energy output is mainly governed by two forces: gravity, acting inwards, and the fusion core of the star, pushing outwards. As the delicate balance between the two sets the size and the surface temperature of the star, the color and brightness of the star are used by astronomers to determine not only how massive the star is, but also what kind of fuel it burns at its core. It is this deterministic physics that allows astronomers to efficiently study stellar populations, as they all obey similar stellar interior physics.</p>
 
-<div class="row">
-  <div class="col-sm-5">
-    <h3>Interests</h3>
-    <ul class="ul-interests">
-      <li>Galactic star formation in infrared dark clouds</li>
-      <li>Bayesian inference, data analysis/visualisation, and machine learning</li>
-      <li>Hiking, backpacking, photography</li>
-    </ul>
-  </div>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Hertzsprung-Russel_StarData.png" alt="Hertzsprung-Russell Diagram identifying many well known stars in the Milky Way galaxy. Credit: ESO, via Wikipedia" title="Hertzsprung-Russell Diagram identifying many well known stars in the Milky Way galaxy. Credit: ESO, via Wikipedia" /></p>
 
-<p><div class="col-sm-7">
-    <h3>Education</h3>
-    <ul class="ul-edu fa-ul">
-      <li>
-        <i class="fa-li fa fa-spinner fa-spin"></i>
-        <div>
-          <p>Ph.D. in Astrophysics (2014 - current)<br/>
-          <small>Ludwig-Maximilians-Universität München, Germany</small></p>
-        </div>
-      </li>
-      <li>
-        <i class="fa-li fa fa-graduation-cap"></i>
-        <div>
-          <p>M.Sc. in Astrophysics (2012 - 2014)<br/>
-          <small>National Tsing Hua University, Taiwan</small></p>
-        </div>
-      </li>
-      <li>
-        <i class="fa-li fa fa-graduation-cap"></i>
-        <div>
-          <p>B.Sc. in Electrophysics (2008 - 2012)<br/>
-          <small>National Chiao Tung University, Taiwan</small></p>
-        </div>
-      </li>
-    <ul>
-  </div>
-</div></p>
+<p>So what if instead of one star, we would look at one billion instead? The <a href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> is a powerful way to visualize stellar populations, and is probably the most famous diagram in astrophysics overall (sorry, Hubble diagram!). Simply put, it allows to classify the masses, ages, and internal compositions of stars based on their color and brightness. In 2013, European Space Agency launched the groundbreaking Gaia mission, and it&rsquo;s been charting the positions, velocities and distances of over a billion stars in the Galaxy, until recently delivering two massive data releases. In addition to those, Gaia also provides photometric information for every star in its catalogue, and we can use the brightness and color information to get a powerful insight into stellar populations within Milky Way.
+Gaia&rsquo;s latest Data Release 2 can be accessed online, so anyone can get the processed data through a number of APIs provided. The example scripts below demonstrate how to obtain Gaia DR2 and use the plot Hertzsprung-Russell diagrams, following the methodology described in recent Gaia publications.</p>
+
+<p>The data can be obtained directly from the <a href="http://gea.esac.esa.int/archive">Gaia archive</a>, but I found it much more convenient to use <code>astroquery</code>, an <code>astropy</code>-affiliated <a href="http://astroquery.readthedocs.io">package</a> that conveniently brings together queries for a large number of publicly available astronomy catalogues, web forms and data archives. In the case of Gaia queries, <code>astroquery</code> <a href="http://astroquery.readthedocs.io/en/latest/gaia/gaia.html">provides access</a> to TAP+ service of the Gaia archive.
+The TAP+ queries are similar to the ones in SQL, and while they are restricted to <code>select</code> statement only, one still has the freedom of using clauses to fine-tune a given query.
+So let&rsquo;s jump straight in it! Given the sheer volume of the data release, let&rsquo;s write a limited query, exhaustively searching for all the stars within 200 pc from the Solar System.
+As the queries could run for a while, it&rsquo;s best to limit the data size transmitted, downloading only the entries with properly constrained photometry and parallaxes. After toying with the quality filters for a while I realized that the <a href="https://doi.org/10.1051/0004-6361/201832843">DR2 paper on H-R diagrams</a> actually lists the query command they use for quality control in the Appendix!</p>
+
+<pre><code class="language-python">def send_radial_gaia_query(query_size=1000000, distance=200, **kwargs):
+    &quot;&quot;&quot;
+    Sends an archive query for d &lt; 200 pc, with additional filters taken from
+    Gaia Data Release 2: Observational Hertzsprung-Russell diagrams (Sect. 2.1)
+    Gaia Collaboration, Babusiaux et al. (2018)
+    (https://doi.org/10.1051/0004-6361/201832843)
+
+    NOTE: 10000000 is a maximum query size (~76 MB / column)
+
+    Additional keyword arguments are passed to TapPlus.launch_job_async method.
+    &quot;&quot;&quot;
+    from astroquery.utils.tap.core import TapPlus
+
+    gaia = TapPlus(url=&quot;http://gea.esac.esa.int/tap-server/tap&quot;)
+
+    job = gaia.launch_job_async(&quot;select top {}&quot;.format(query_size)+
+                #&quot; lum_val, teff_val,&quot;
+                #&quot; ra, dec, parallax,&quot;
+                &quot; bp_rp, phot_g_mean_mag+5*log10(parallax)-10 as mg&quot;
+         &quot; from gaiadr2.gaia_source&quot;
+         &quot; where parallax_over_error &gt; 10&quot;
+         &quot; and visibility_periods_used &gt; 8&quot;
+         &quot; and phot_g_mean_flux_over_error &gt; 50&quot;
+         &quot; and phot_bp_mean_flux_over_error &gt; 20&quot;
+         &quot; and phot_rp_mean_flux_over_error &gt; 20&quot;
+         &quot; and phot_bp_rp_excess_factor &lt;&quot;
+            &quot; 1.3+0.06*power(phot_bp_mean_mag-phot_rp_mean_mag,2)&quot;
+         &quot; and phot_bp_rp_excess_factor &gt;&quot;
+            &quot; 1.0+0.015*power(phot_bp_mean_mag-phot_rp_mean_mag,2)&quot;
+         &quot; and astrometric_chi2_al/(astrometric_n_good_obs_al-5)&lt;&quot;
+            &quot;1.44*greatest(1,exp(-0.4*(phot_g_mean_mag-19.5)))&quot;
+         +&quot; and 1000/parallax &lt;= {}&quot;.format(distance), **kwargs)
+
+    return job
+</code></pre>
+
+<p>The query above runs for a while, I think it took around half an hour to finish (not sure if due to a lousy WiFi connection or some server-side delay), but either way we better ensure we have those data saved for good:</p>
+
+<pre><code class="language-python">import numpy as np
+
+try:
+    gaiarec = np.recfromcsv(&quot;gaia-hrd-dr2-200pc.csv&quot;)
+    bp_rp, mg = gaiarec.bp_rp, gaiarec.mg
+except OSError:
+    job = send_radial_gaia_query(dump_to_file=True, output_format=&quot;csv&quot;,
+                                 output_file=&quot;gaia-hrd-dr2-200pc.csv&quot;,
+                                 query_size=10000000)
+    r = job.get_results()
+    bp_rp = r['bp_rp'].data
+    mg = r['mg'].data
+</code></pre>
+
+<p>The default output format is a binary <a href="http://www.ivoa.net/documents/VOTable/">VOTable</a>, but I ran into an issue where Python 3 <code>astropy</code> couldn&rsquo;t decode the unicode characters in the saved file, so plain text csv would have to do. We aren&rsquo;t plotting the entire Gaia DR2 source catalogue anyway.</p>
+
+<p>Now let&rsquo;s try to plot some H-R diagrams! The scatter plot is extremely dense, so we need to switch from scatter plot to visualizing the density somehow after the point cloud gets saturated. I tried running KDE with <code>scipy</code> and <code>scikit-learn</code>, but smoothing so many points took ages. Instead, we&rsquo;ll just use a 2D-histogram, which counts the density of data points on a rectangular grid. I originally tried to plot an interactive <code>bokeh</code> 2D <a href="https://bokeh.pydata.org/en/latest/docs/gallery/hex_tile.html">hex tile histogram</a>, but that proved to be extremely sluggish as well. Giving up on &ldquo;fancy&rdquo; solutions, I found the classical <code>matplotlib</code> to give the best performance results:</p>
+
+<pre><code class="language-python"># plot the H-R diagram for 1 M stars within 200 pc from the Sun
+import matplotlib.pyplot as plt
+from matplotlib import colors
+plt.rc('text', usetex=True)
+
+fig, ax = plt.subplots(figsize=(6, 6))
+# only show 2D-histogram for bins with more than 10 stars in them
+h = ax.hist2d(bp_rp, mg, bins=300, cmin=10, norm=colors.PowerNorm(0.5), zorder=0.5)
+# fill the rest with scatter (set rasterized=True if saving as vector graphics)
+ax.scatter(bp_rp, mg, alpha=0.05, s=1, color='k', zorder=0)
+ax.invert_yaxis()
+cb = fig.colorbar(h[3], ax=ax, pad=0.02)
+ax.set_xlabel(r'$G_{BP} - G_{RP}$')
+ax.set_ylabel(r'$M_G$')
+cb.set_label(r&quot;$\mathrm{Stellar~density}$&quot;)
+plt.show()
+</code></pre>
+
+<p><img src="gaia-hrd-dr2.png" alt="H-R diagram" /></p>
+
+<p>As expected, the dominant majority of field stars in the Solar neighborhood lies on the main sequence, with low-mass stars governing the mass spectrum. In addition to the main sequence stars, the giant branch and the white dwarf strips are clearly visible in the Gaia data.</p>
+
+<p>The Jupyter notebook with the code above can be found <a href="gaia-hrd-dr2.ipynb">here</a>.</p>
 
       </article>
 
       
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://vlas-sokolov.github.io/post/testing/" data-toggle="tooltip" data-placement="top" title="New webpage! What can it do?">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
 
 
+      
+        
+        
       
 
     </div>
