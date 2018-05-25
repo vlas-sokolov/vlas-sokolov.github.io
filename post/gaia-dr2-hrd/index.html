@@ -12,6 +12,7 @@
   <meta property="og:description" content="Querying Gaia data for one million nearby stars">
   <meta name="twitter:description" content="Querying Gaia data for one million nearby stars">
   <meta name="author" content="Vlas Sokolov"/>
+  <link href='https://vlas-sokolov.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
@@ -171,7 +172,7 @@
   
   
   &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 5 minutes (961 words)
+  <i class="fa fa-clock-o"></i> 7 minutes (1351 words)
   
   
 </span>
@@ -195,7 +196,7 @@
 
 <p><img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Hertzsprung-Russel_StarData.png" alt="Hertzsprung-Russell Diagram identifying many well known stars in the Milky Way galaxy. Credit: ESO, via Wikipedia" title="Hertzsprung-Russell Diagram identifying many well known stars in the Milky Way galaxy. Credit: ESO, via Wikipedia" /></p>
 
-<p>So what if instead of one star, we would look at one billion instead? The <a href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> is a powerful way to visualize stellar populations, and is probably the most famous diagram in astrophysics overall (sorry, Hubble diagram!). Simply put, it allows to classify the masses, ages, and internal compositions of stars based on their color and brightness. In 2013, European Space Agency launched the groundbreaking Gaia mission, and it&rsquo;s been charting the positions, velocities and distances of over a billion stars in the Galaxy, until recently delivering two massive data releases. In addition to those, Gaia also provides photometric information for every star in its catalogue, and we can use the brightness and color information to get a powerful insight into stellar populations within Milky Way.
+<p>So what if instead of one star, we would look at one billion instead? The <a href="https://en.wikipedia.org/wiki/Hertzsprung%E2%80%93Russell_diagram">Hertzsprung-Russell diagram</a> (schematically pictured above) is a powerful way to visualize stellar populations, and is probably the most famous diagram in astrophysics overall (sorry, Hubble diagram!). Simply put, it allows to classify the masses, ages, and internal compositions of stars based on their color and brightness. In 2013, European Space Agency launched the groundbreaking Gaia mission, and it&rsquo;s been charting the positions, velocities and distances of over a billion stars in the Galaxy, until recently delivering two massive data releases. In addition to those, Gaia also provides photometric information for every star in its catalogue, and we can use the brightness and color information to get a powerful insight into stellar populations within Milky Way.
 Gaia&rsquo;s latest Data Release 2 can be accessed online, so anyone can get the processed data through a number of APIs provided. The example scripts below demonstrate how to obtain Gaia DR2 and use the plot Hertzsprung-Russell diagrams, following the methodology described in recent Gaia publications.</p>
 
 <p>The data can be obtained directly from the <a href="http://gea.esac.esa.int/archive">Gaia archive</a>, but I found it much more convenient to use <code>astroquery</code>, an <code>astropy</code>-affiliated <a href="http://astroquery.readthedocs.io">package</a> that conveniently brings together queries for a large number of publicly available astronomy catalogues, web forms and data archives. In the case of Gaia queries, <code>astroquery</code> <a href="http://astroquery.readthedocs.io/en/latest/gaia/gaia.html">provides access</a> to TAP+ service of the Gaia archive.
@@ -257,7 +258,7 @@ except OSError:
 
 <p>The default output format is a binary <a href="http://www.ivoa.net/documents/VOTable/">VOTable</a>, but I ran into an issue where Python 3 <code>astropy</code> couldn&rsquo;t decode the unicode characters in the saved file, so plain text csv would have to do. We aren&rsquo;t plotting the entire Gaia DR2 source catalogue anyway.</p>
 
-<p>Now let&rsquo;s try to plot some H-R diagrams! The scatter plot is extremely dense, so we need to switch from scatter plot to visualizing the density somehow after the point cloud gets saturated. I tried running KDE with <code>scipy</code> and <code>scikit-learn</code>, but smoothing so many points took ages. Instead, we&rsquo;ll just use a 2D-histogram, which counts the density of data points on a rectangular grid. I originally tried to plot an interactive <code>bokeh</code> 2D <a href="https://bokeh.pydata.org/en/latest/docs/gallery/hex_tile.html">hex tile histogram</a>, but that proved to be extremely sluggish as well. Giving up on &ldquo;fancy&rdquo; solutions, I found the classical <code>matplotlib</code> to give the best performance results:</p>
+<p>Now let&rsquo;s try to plot some H-R diagrams! The scatter plot is extremely dense, especially at the Main Sequence, so we need to switch from scatter plot to visualizing the density somehow after the point cloud gets saturated. I tried running KDE smoothing with <code>scipy</code> and <code>scikit-learn</code>, but convolution of so many points took ages. Instead, we&rsquo;ll just use a 2D-histogram, which counts the density of data points on a rectangular grid. I originally tried to plot an interactive <code>bokeh</code> 2D <a href="https://bokeh.pydata.org/en/latest/docs/gallery/hex_tile.html">hex tile histogram</a>, but that proved to be extremely sluggish as well. Giving up on the &ldquo;fancy&rdquo; solutions, I found the classical <code>matplotlib</code> approach to give the best performance results:</p>
 
 <pre><code class="language-python"># plot the H-R diagram for 1 M stars within 200 pc from the Sun
 import matplotlib.pyplot as plt
@@ -279,7 +280,18 @@ plt.show()
 
 <p><img src="gaia-hrd-dr2.png" alt="H-R diagram" /></p>
 
-<p>As expected, the dominant majority of field stars in the Solar neighborhood lies on the main sequence, with low-mass stars governing the mass spectrum. In addition to the main sequence stars, the giant branch and the white dwarf strips are clearly visible in the Gaia data.</p>
+<p>The dominant majority of field stars in the Solar neighborhood lies on the main sequence, with low-mass stars (detectable thanks to Gaia&rsquo;s good sensitivity to low-brightness sources) dominating the mass spectrum. At the dim red end of the diagram (bottom-right on the plot), Gaia&rsquo;s sensitivity is good enough to even detect a few hundred brown dwarfs, failed stars that are not massive enough to ignite hydrogen fusion within them.
+So why is then the high-mass end (top-left corner) of the main sequence ends where it does? Bright and blue objects in that corner of the H-R diagram is where massive, ultra-luminous stars of <a href="https://en.wikipedia.org/wiki/Stellar_classification">O and B types</a> are found, and indeed the Gaia data on nearby stars seems rather sparse, and truncates before the theoretical diagram shown earlier. Why is that?</p>
+
+<ul>
+<li>Not only massive stars are less likely to form (simply put, a big clump of interstellar gas prefers to fragment into a cluster of lower-mass stars than to form a massive star) but they also do not live long, burning out all their nuclear fuel much faster (typically in a few million years) than stars like our Sun.</li>
+<li>There are simply no massive stellar nurseries within two hundred parsecs (our search radius) where new high-mass stars could form.</li>
+<li>Gaia&rsquo;s sensors are so sensitive that they actually get &ldquo;blinded&rdquo; by stars that are too bright! As a consequence, nearly all the stars visible on the night sky with naked eye are saturated in Gaia&rsquo;s data, and are not present in the DR2 catalogue.</li>
+</ul>
+
+<p>In addition to the main sequence stars, the white dwarf strip is clearly visible from the Gaia data. Fun fact: that&rsquo;s precisely where the lonely core of the Sun will end up after its fiery death! Amazingly, even our limited data query shows that the white dwarfs are split into two populations, something that have never been observationally seen before (check out how observational H-R diagrams <a href="https://www.cosmos.esa.int/web/hipparcos/h-r-diagrams">looked like before Gaia</a>). While some splitting is expected for different types of white dwarf atmospheres, this <a href="https://astrobites.org/2018/05/24/gaia_14000_white_dwarfs/">astrobites post</a> gives a great summary of why the two groups of white dwarfs might result from a different process (spoiler: <span style="color: white; background: white; span:hover {color: white}">WD mergers?</span>).</p>
+
+<p>In summary, the richness of the Gaia data is unprecedented even when we look at the Solar neighborhood. If we would get all the data from Gaia DR2, we would look at over a billion stars - that&rsquo;s more than 1% of stars in the Galaxy! Gaia sparked a rejuvenation of stellar population studies, and plenty more interesting results will follow in years to come.</p>
 
 <p>The Jupyter notebook with the code above can be found <a href="gaia-hrd-dr2.ipynb">here</a>.</p>
 
