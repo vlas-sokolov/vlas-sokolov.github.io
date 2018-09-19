@@ -8,10 +8,30 @@
     <language>en-us</language>
     <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
     <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
-    <lastBuildDate>Wed, 09 May 2018 16:06:27 +0200</lastBuildDate>
+    <lastBuildDate>Wed, 19 Sep 2018 16:01:18 +0200</lastBuildDate>
     
 	<atom:link href="https://vlas-sokolov.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>PPV diagram for IRDC G035.39-00.39</title>
+      <link>https://vlas-sokolov.github.io/post/cloudh-ppv/</link>
+      <pubDate>Wed, 19 Sep 2018 16:01:18 +0200</pubDate>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
+      <guid>https://vlas-sokolov.github.io/post/cloudh-ppv/</guid>
+      <description> Description The below figure is an interactive plotly position-position-velocity diagram of the ammonia-derived kinamatics within a massive filamentary infrared dark cloud G035.39-00.33, to be presented in an upcoming paper. The velocity components identified with ACORNS are overplotted in color.
+A modern browser is recommended for the best view.
+Figure    </description>
+    </item>
+    
+    <item>
+      <title>Urban Growth</title>
+      <link>https://vlas-sokolov.github.io/post/urban-growth/</link>
+      <pubDate>Mon, 20 Aug 2018 15:27:23 +0200</pubDate>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
+      <guid>https://vlas-sokolov.github.io/post/urban-growth/</guid>
+      <description>Projected urban growth (2018-2035) While taking a much needed break from thesis writing, I was toying around with map visualizations in Python. After all, plotting maps of the land has got to be similar to making maps of the sky, right? All in all, plotting geospatial data turned out to be a rather easy, and I spent most time looking for a decent data to plot and on a formidable task of choosing which map projection to use.</description>
+    </item>
     
     <item>
       <title>Gaia H-R diagrams</title>

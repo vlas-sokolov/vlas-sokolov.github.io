@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://vlas-sokolov.github.io/post/cloudh-ppv/</loc>
+    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vlas-sokolov.github.io/post/urban-growth/</loc>
+    <lastmod>2018-08-20T15:27:23+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://vlas-sokolov.github.io/post/gaia-dr2-hrd/</loc>
     <lastmod>2018-05-09T16:06:27+02:00</lastmod>
   </url>
@@ -30,7 +40,7 @@
   
   <url>
     <loc>https://vlas-sokolov.github.io/post/</loc>
-    <lastmod>2018-05-09T16:06:27+02:00</lastmod>
+    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -41,7 +51,7 @@
   
   <url>
     <loc>https://vlas-sokolov.github.io/</loc>
-    <lastmod>2018-05-09T16:06:27+02:00</lastmod>
+    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
     <priority>0</priority>
   </url>
   

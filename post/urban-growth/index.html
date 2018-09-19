@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Urban Growth</title>
+  <meta property="og:title" content="Urban Growth" />
+  <meta name="twitter:title" content="Urban Growth" />
+  <meta name="description" content="Projected urban growth (2018-2035) While taking a much needed break from thesis writing, I was toying around with map visualizations in Python. After all, plotting maps of the land has got to be similar to making maps of the sky, right? All in all, plotting geospatial data turned out to be a rather easy, and I spent most time looking for a decent data to plot and on a formidable task of choosing which map projection to use.">
+  <meta property="og:description" content="Projected urban growth (2018-2035) While taking a much needed break from thesis writing, I was toying around with map visualizations in Python. After all, plotting maps of the land has got to be similar to making maps of the sky, right? All in all, plotting geospatial data turned out to be a rather easy, and I spent most time looking for a decent data to plot and on a formidable task of choosing which map projection to use.">
+  <meta name="twitter:description" content="Projected urban growth (2018-2035) While taking a much needed break from thesis writing, I was toying around with map visualizations in Python. After all, plotting maps of the land has got to be …">
+  <meta name="author" content="Vlas Sokolov"/>
+  <link href='https://vlas-sokolov.github.io/img/favicon.ico' rel='icon' type='image/x-icon'/>
+  <meta property="og:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
+  <meta name="twitter:image" content="https://vlas-sokolov.github.io/img/iram30m.jpg" />
+  <meta name="twitter:card" content="summary" />
+  <meta property="og:url" content="https://vlas-sokolov.github.io/post/urban-growth/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Vlas Sokolov" />
+
+  <meta name="generator" content="Hugo 0.38-DEV" />
+  <link rel="canonical" href="https://vlas-sokolov.github.io/post/urban-growth/" />
+  <link rel="alternate" href="https://vlas-sokolov.github.io/index.xml" type="application/rss+xml" title="Vlas Sokolov">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://vlas-sokolov.github.io/css/main.css" /><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" />
+  <link rel="stylesheet" href="https://vlas-sokolov.github.io/css/highlight.min.css" /><link rel="stylesheet" href="https://vlas-sokolov.github.io/css/codeblock.css" />
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.css" integrity="sha384-h/L2W9KefUClHWaty3SLE5F/qvc4djlyR4qY3NUV5HGQBBW7stbcfff1+I/vmsHh" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/default-skin/default-skin.min.css" integrity="sha384-iD0dNku6PYSIQLyfTOpB06F2KCZJAKLOThS5HRe8b3ibhdEQ6eKsFf/EeFxdOt5R" crossorigin="anonymous">
+
+
+
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+<div class="pswp__bg"></div>
+
+<div class="pswp__scroll-wrap">
+    
+    <div class="pswp__container">
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+      <div class="pswp__item"></div>
+    </div>
+    
+    <div class="pswp__ui pswp__ui--hidden">
+    <div class="pswp__top-bar">
+      
+      <div class="pswp__counter"></div>
+      <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+      <button class="pswp__button pswp__button--share" title="Share"></button>
+      <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+      <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+      
+      
+      <div class="pswp__preloader">
+        <div class="pswp__preloader__icn">
+          <div class="pswp__preloader__cut">
+            <div class="pswp__preloader__donut"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+      <div class="pswp__share-tooltip"></div>
+    </div>
+    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+    </button>
+    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+    </button>
+    <div class="pswp__caption">
+      <div class="pswp__caption__center"></div>
+    </div>
+    </div>
+    </div>
+</div>
+
+</head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top navbar-custom">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="https://vlas-sokolov.github.io">Vlas Sokolov</a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="main-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        
+          
+            <li>
+              <a title="About" href="/page/about/">About</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="Blog" href="/">Blog</a>
+            </li>
+          
+        
+          
+            <li>
+              <a title="CV (pdf)" href="/pdfs/cv.pdf">CV (pdf)</a>
+            </li>
+          
+        
+
+        
+
+        
+      </ul>
+    </div>
+
+    <div class="avatar-container">
+      <div class="avatar-img-border">
+        
+          <a title="Vlas Sokolov" href="https://vlas-sokolov.github.io">
+            <img class="avatar-img" src="https://vlas-sokolov.github.io/img/iram30m.jpg" alt="Vlas Sokolov" />
+          </a>
+        
+      </div>
+    </div>
+
+  </div>
+</nav>
+
+
+
+
+    
+  
+  
+  
+
+
+
+
+  
+
+  <header class="header-section ">
+    
+    <div class="intro-header no-img">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="post-heading">
+              <h1>Urban Growth</h1>
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 20, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 7 minutes (1305 words)
+  
+  
+</span>
+
+
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+    
+<div class="container" role="main">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        
+
+<h2 id="projected-urban-growth-2018-2035">Projected urban growth (2018-2035)</h2>
+
+<p>While taking a much needed break from thesis writing, I was toying around with map visualizations in Python.
+After all, plotting maps of the land has got to be similar to making maps of the sky, right?
+All in all, plotting geospatial data turned out to be a rather easy, and I spent most time looking for a decent data to plot and on a formidable task of <a href="https://xkcd.com/977/">choosing which map projection to use</a>.</p>
+
+<p>Search on publicly available datasets eventually landed me on UN <a href="https://esa.un.org/unpd/wup/">World Urbanization Prospects</a> page, with their 2018 report containing estimates for populations of urban areas with &gt;300,000 population, as well as their projected yearly populations all the way until 2035! So what can you you tell from a population dynamics of cities over decades?</p>
+
+<p>It seems that globally, you&rsquo;d expect two effects coming into play simultaneously: the overall <em>population change</em> of a given country, as well as the <em>urbanization pace</em> within it. Just from those two, we can predict some trends in the dataset already, though I&rsquo;m clearly cheating in pretending that I haven&rsquo;t looked at the data already:</p>
+
+<ul>
+<li>Large population increases in countries like India and China will unavoidably lead to increase in city populations. On the other hand, population decline of Japan will definitely show up in the population dynamics visualized.</li>
+<li>While much of the Western world already heavily urbanized, many countries still maintain large rural populations. According to the UN report, Africa and Asia are home to nearly 90% of the world&rsquo;s rural population. The UN report <a href="https://esa.un.org/unpd/wup/General/FAQs.aspx">assumes</a> that the urban/rural ratio development will follow the overall world trend, and we expect to see a large fractional change in urban population in <a href="https://en.wikipedia.org/wiki/Urbanization#/media/File:2015_World_Urbanization_Map.png">relatively rural</a> countries.</li>
+</ul>
+
+<p>So let&rsquo;s see where the cities will grow most/least! Two Python plotting frameworks are to be explored:</p>
+
+<ol>
+<li>Riding on top of heavily-customizable behemoth of scientific plotting, <a href="https://matplotlib.org/">matplotlib</a>, the map-making <a href="https://matplotlib.org/basemap/">basemap</a> package.</li>
+<li><a href="https://d3js.org/">D3.js</a>-based <a href="https://plot.ly/">plot.ly</a> framework is a modern web-driven visualization tool, with a whole bunch of high-level plotting routine. Its lower-level customization is limited due to my near-illiteracy in javascript, so we&rsquo;re going to use Python implementation of plotly.</li>
+</ol>
+
+<h3 id="obtaining-the-data">Obtaining the data</h3>
+
+<p>The Excel file can be downloaded <a href="https://esa.un.org/unpd/wup/Download/Files/WUP2018-F22-Cities_Over_300K_Annual.xls">here</a>. I used LibreOffice to convert it to a .csv file that&rsquo;s included in the GitHub <a href="https://github.com/vlas-sokolov/urban-growth/">repo</a>, where the code snippets come from.</p>
+
+<p><em>Data source: United Nations, Department of Economic and Social Affairs, Population Division (2018). World Urbanization Prospects: The 2018 Revision, Online Edition.</em></p>
+
+<pre><code class="language-python">import pandas as pd
+
+fname=&quot;data/WUP2018-F22-Cities_Over_300K_Annual.csv&quot;
+df = pd.read_csv(fname, thousands=&quot; &quot;, skiprows=16, index_col=4)
+
+# adding some basics on the UN-projected city growth, 2018-2035
+df[&quot;growthabs&quot;] = df[&quot;2035&quot;] - df[&quot;2018&quot;]
+df[&quot;growthperc&quot;] = df[&quot;growthabs&quot;] / df[&quot;2018&quot;] * 100
+</code></pre>
+
+<p>With the data loaded, let&rsquo;s think on what we want to show to begin with. Two quantities are of interest: the <em>absolute</em> population change and the <em>fractional</em> one. The cities that show the most total population change are not necessarily the same cities that show the biggest percentage growth!</p>
+
+<p>A <a href="https://github.com/vlas-sokolov/urban-growth/blob/master/wup2018.ipynb">quick look</a> shows that the top 5 fractional growth is projected to occur in rapidly-growing African cities. In fact, 94 out of 100 fastest-growing cities are in Africa! This means that urbanization alone can not explain the population increase in urban areas, but is coupled with the overall population growth. The reason behind the latter is that Africa&rsquo;s population is young and is expected to <a href="https://www.theguardian.com/global-development-professionals-network/2016/jan/11/population-growth-in-africa-grasping-the-scale-of-the-challenge">double by 2050</a>, driven by access to better healthcare (meaning higher life expectancy and lower infant mortality rates), while the <a href="https://en.wikipedia.org/wiki/Total_fertility_rate">total fertility rates</a> remain high.</p>
+
+<p>In any case, let&rsquo;s get back to plotting! For each city, a marking on the map is to be made. We&rsquo;ll use the absolute population change as a size of it, and a fractional change will be shown in color.</p>
+
+<h3 id="plotting-with-matplotlib">Plotting with matplotlib</h3>
+
+<p>The high level of customization possible in <code>matplotlib</code> allows to do whatever we want with the colors of the markers. We&rsquo;ll make a custom colormap for the job, with red representing population decline, green for the growth, and yellow for the zero change midpoint.</p>
+
+<pre><code class="language-python">from matplotlib.colors import Normalize
+import numpy as np
+
+class MidpointNormalize(Normalize):
+    &quot;&quot;&quot; 
+    Used to force a zero level in a colormap.
+    Neat for forcing reds to negative urban growth.
+
+    Taken from Joe Kington's answer on StackOverflow:
+    https://stackoverflow.com/a/20146989/4118756
+    &quot;&quot;&quot;
+    def __init__(self, vmin=None, vmax=None, midpoint=None, clip=False):
+        self.midpoint = midpoint
+        Normalize.__init__(self, vmin, vmax, clip)
+
+    def __call__(self, value, clip=None):
+        # I'm ignoring masked values and all kinds of edge cases to make a
+        # simple example...
+        x, y = [self.vmin, self.midpoint, self.vmax], [0, 0.5, 1]
+        return np.ma.masked_array(np.interp(value, x, y))
+</code></pre>
+
+<p>Now for the actual plotting, the <code>basemap</code> will handle all the map projections, while the scatter plot, colorings, legend and colorbar are handed over to <code>matplotlib</code>. Had to tinker a bit with the color ranges and sizes of the points (power-scaling makes better visual contrast and an absolute offset allows small changes to still be seen).</p>
+
+<pre><code class="language-python">% matplotlib inline
+import matplotlib.pyplot as plt
+from mpl_toolkits.basemap import Basemap
+
+plt.rc('text', usetex=True)
+
+# scale markers by absolute growth
+growth_to_msize = lambda p: np.abs(p)**0.7 + 10
+m_size = df['growthabs'].apply(growth_to_msize)
+
+# color markers by relative growth
+m_col = df['growthperc']
+vmin, vmax = np.percentile(m_col, 1), np.percentile(m_col, 95)
+normalize = MidpointNormalize(vmin=vmin, vmax=vmax, midpoint=0)
+
+# Basemap takes plt.gcf() as a figure but doesn't pass kwargs to figures
+plt.figure(figsize=(16, 8))
+# we don't want xkcd to infer our personality type, hence the
+# choice of the McBryde-Thomas Flat Polar Quartic projection
+bmap = Basemap(resolution='l', projection='mbtfpq', lon_0=45, lat_0=0)
+bmap.drawmapboundary(fill_color='#c6dbef')
+bmap.fillcontinents(color='#f2e0c9', lake_color='#c6dbef',
+                    zorder=0.8, alpha=0.5)
+bmap.etopo(alpha=0.3, zorder=0.9)
+bmap.drawcoastlines(linewidth=0.6, zorder=0.9, color='#525252')
+bmap.drawcountries(linewidth=0.6, zorder=0.9, color='#525252')
+x, y = bmap(df['Longitude'].values, df['Latitude'].values)
+bmap.scatter(x, y, c=m_col,
+            s=m_size, marker='.', alpha=0.9, edgecolor='#737373',
+            cmap=plt.cm.RdYlGn, norm=normalize, zorder=1)
+cbar = bmap.colorbar(size='2%', extend='max')
+cbar.set_label(r'$\mathrm{Relative~city~size~growth~(\%)}$',
+               fontsize='large')
+plt.gca().set_title(r'$\mathrm{Projected~growth~of~cities~with~over'
+              '~300\,000~inhabitants~(2018-2035)}$', fontsize='x-large')
+
+bmap.drawparallels(np.arange(-90.,120.,30.), zorder=0.7,
+                   color='#969696', linewidth=0.3)
+bmap.drawmeridians(np.arange(0.,360.,60.), zorder=0.7,
+                   color='#969696', linewidth=0.3)
+
+# display size scale of the scatter points
+for dp, lab in zip([10, 100, 1000, 10000],
+        [r'$10\,000$', r'$100\,000$',
+         r'$1~\mathrm{million}$', r'$10~\mathrm{million}$']):
+    plt.scatter([], [], facecolor='none', edgecolor='#737373', alpha=0.9,
+                s=growth_to_msize(dp), marker='.', label=lab)
+plt.legend(scatterpoints=1, frameon=False, labelspacing=1, loc='lower left')
+
+# basemap issue:
+# https://stackoverflow.com/questions/15003353
+cbar.set_alpha(1)
+cbar.draw_all()
+
+plt.show()
+</code></pre>
+
+<p><img src="wup-urban-growth.png" alt="Urban growth with matplotlib" /></p>
+
+<p>And there we have it, as pretty as I could get it to be! The only downsides is that it&rsquo;s noninteractive and takes a bit of time to generate. So let&rsquo;s see how web-based approach works!</p>
+
+<h3 id="plotting-with-plotly">Plotting with plotly</h3>
+
+<p>Everything related to the individual data points is defined below:</p>
+
+<pre><code class="language-python">growth_to_msize = lambda p: np.abs(p)**0.5 + 3
+m_col = df['growthperc']
+cmin, cmax = np.percentile(m_col, 1), np.percentile(m_col, 95)
+
+df['growth_abs_str'] = df.growthabs.apply(lambda n: f'{n*1000:+,d}')
+df['growth_perc_str'] = df.growthperc.apply(lambda p: f'{p:+.1f}%')
+# using hiddent atttributes is bad and I should feed bad
+df['growth_str'] = df[['growth_abs_str', 'growth_perc_str']].apply(
+            lambda x: f'{x._name}: {x[0]} ({x[1]})', axis=1)
+
+urban_growth = [dict(
+        name = df.index.values,
+        lon = df['Longitude'],
+        lat = df['Latitude'],
+        marker = dict(
+            color = df['growthperc'], # color by fractional increase
+            colorscale = 'Portland', # palette name
+            colorbar = {'ticksuffix': '%'},
+            reversescale = True, # invert the colorbar mapping
+            showscale = True, # show colorbar?
+            cmin = cmin,
+            cmax = cmax,
+            sizemode = 'area', # could play with power scale instead
+            size = growth_to_msize(df['growthabs'])
+            ),
+        type = 'scattergeo',
+        showlegend = False,
+        text = df['growth_str'],
+        hoverinfo = 'text'
+    )]
+</code></pre>
+
+<p>&hellip; and all the settings for a more global layout are described here:</p>
+
+<pre><code class="language-python">layout = dict(
+    title = 'Projected growth of cities with over'
+             ' 300,000 inhabitants (2018-2035)'
+             '&lt;br&gt;Source: &lt;a href=&quot;https://esa.un.org/unpd/wup/&quot;&gt;'
+             ' UN World Urbanization Prospects 2018&lt;/a&gt;',
+    showlegend = True,
+    geo = dict(
+        scope = 'world',
+        projection = dict(type='orthographic'),
+        showland = True,
+        showcoastlines = True,
+        resolution = '110', # the only other available option is too slow!
+        showcountries = True,
+        countrycolor = '#525252',
+        showocean = True,
+        oceancolor = '#c6dbef',
+        showlakes = True,
+        lakecolor = '#c6dbef',
+        showrivers = True,
+        rivercolor = '#c6dbef',
+        landcolor = '#f2e0c9',
+        subunitwidth = 1,
+        countrywidth = 1,
+        #subunitcolor = &quot;rgb(255, 255, 255)&quot;, # que es?
+    ))
+</code></pre>
+
+<p>With these two, we just have to call one command (<code>iplot(dict(data=urban_growth, layout=layout))</code> in Jupyter notebook) and we have an interactive spinning globe with informative tooltips showing the exact values for each urban area.</p>
+
+<div>
+    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~vlas-sokolov/14.embed"></iframe>
+</div>
+
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://vlas-sokolov.github.io/post/gaia-dr2-hrd/" data-toggle="tooltip" data-placement="top" title="Gaia H-R diagrams">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://vlas-sokolov.github.io/post/cloudh-ppv/" data-toggle="tooltip" data-placement="top" title="PPV diagram for IRDC G035.39-00.39">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
+
+    <footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+        <ul class="list-inline text-center footer-links">
+          
+              <li>
+                <a href="mailto:vlas.sokolov@mpg-alumni.de" title="Email me">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.facebook.com/vlas.sokolov" title="Facebook">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/vlas-sokolov" title="GitHub">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://linkedin.com/in/vlas-sokolov" title="LinkedIn">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="https://stackoverflow.com/users/4118756/vlas-sokolov" title="StackOverflow">
+                  <span class="fa-stack fa-lg">
+                    <i class="fa fa-circle fa-stack-2x"></i>
+                    <i class="fa fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                  </span>
+                </a>
+              </li>
+          
+        </ul>
+        <p class="credits copyright text-muted">
+          
+            
+              Vlas Sokolov
+            
+          
+
+          &nbsp;&bull;&nbsp;
+          2018
+
+          
+            &nbsp;&bull;&nbsp;
+            <a href="https://vlas-sokolov.github.io">Vlas Sokolov</a>
+          
+        </p>
+        
+        <p class="credits theme-by text-muted">
+          <a href="http://gohugo.io">Hugo v0.38-DEV</a> powered &nbsp;&bull;&nbsp; Theme by <a href="http://deanattali.com/beautiful-jekyll/">Beautiful Jekyll</a> adapted to <a href="https://github.com/halogenica/beautifulhugo">Beautiful Hugo</a>
+          
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.js" integrity="sha384-/y1Nn9+QQAipbNQWU65krzJralCnuOasHncUFXGkdwntGeSvQicrYkiUBwsgUqc1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/contrib/auto-render.min.js" integrity="sha384-dq1/gEHSxPZQ7DdrM82ID4YVol9BYyU7GbWlIwnwyPzotpoc57wDw/guX8EaYGPx" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<script src="https://vlas-sokolov.github.io/js/main.js"></script>
+<script src="https://vlas-sokolov.github.io/js/highlight.min.js"></script>
+<script> hljs.initHighlightingOnLoad(); </script>
+<script> $(document).ready(function() {$("pre.chroma").css("padding","0");}); </script><script> renderMathInElement(document.body); </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe.min.js" integrity="sha384-QELNnmcmU8IR9ZAykt67vGr9/rZJdHbiWi64V88fCPaOohUlHCqUD/unNN0BXSqy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.2/photoswipe-ui-default.min.js" integrity="sha384-m67o7SkQ1ALzKZIFh4CiTA8tmadaujiTa9Vu+nqPSwDOqHrDmxLezTdFln8077+q" crossorigin="anonymous"></script>
+<script src="https://vlas-sokolov.github.io/js/load-photoswipe.js"></script>
+
+
+
+
+
+
+  </body>
+</html>
+
