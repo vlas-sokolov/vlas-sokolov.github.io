@@ -14,14 +14,18 @@
     
     
     <item>
-      <title>PPV diagram for IRDC G035.39-00.39</title>
+      <title>Tangled velocity structure in a massive stellar nursery</title>
       <link>https://vlas.dev/post/cloudh-ppv/</link>
       <pubDate>Wed, 19 Sep 2018 16:01:18 +0200</pubDate>
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/post/cloudh-ppv/</guid>
-      <description> Description The below figure is an interactive plotly position-position-velocity diagram of the ammonia-derived kinamatics within a massive filamentary infrared dark cloud G035.39-00.33, to be presented in an upcoming paper. The velocity components identified with ACORNS are overplotted in color.
-A modern browser is recommended for the best view.
-Figure    </description>
+      <description>&lt;p&gt;The figure below is an interactive supplement for my &lt;a href=&#34;https://iopscience.iop.org/article/10.3847/1538-4357/aafaff&#34;&gt;Sokolov et al. (2019)&lt;/a&gt; paper, where we used unsupervised hierarchical clustering algorithm to disentangle complex dynamics within a massive molecular cloud.&lt;/p&gt;
+
+&lt;p&gt;The figure, made in &lt;code&gt;plotly&lt;/code&gt;, is a position-position-velocity diagram of the ammonia-derived kinematics within a massive filamentary infrared dark cloud G035.39-00.33. The velocity components identified with &lt;a href=&#34;http://ascl.net/2003.003&#34;&gt;acorns&lt;/a&gt; are shown in different colors.&lt;/p&gt;
+
+&lt;div&gt;
+    &lt;iframe width=&#34;900&#34; height=&#34;800&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; src=&#34;./html/g35-ppv-acorns.html&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;</description>
     </item>
     
     <item>
@@ -48,7 +52,11 @@ Figure    </description>
       <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/page/about/</guid>
-      <description>img {border-radius: 50%;}    An astrophysics Ph.D. student based in Munich, Germany. I am condutcing academic research and analysing astronomical observations of the early stages of massive star formation. Over my studies I learned to enjoy tinkering with data analysis, statistical methods, and data visualization.  
+      <description>img {border-radius: 50%;}    A data scientist, software developer, and an astrophysicist (not necessarily in that order) based in Munich, Germany. I enjoy tinkering with data analysis, statistical methods, and data visualization.
+Work Experience    Data Engineer (2018 - current) INNOSPOT GmbH
+     Doctoral Researcher (2014 - 2018) Max Planck Institute for Extraterrestrial Physics
+ 
+ 
 Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>
     </item>
     
