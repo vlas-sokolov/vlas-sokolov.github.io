@@ -5,21 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Categories</title>
-  <meta property="og:title" content="Categories" />
-  <meta name="twitter:title" content="Categories" />
+  <title>Venn diagrams and Bayes&#39; theorem</title>
+  <meta property="og:title" content="Venn diagrams and Bayes&#39; theorem" />
+  <meta name="twitter:title" content="Venn diagrams and Bayes&#39; theorem" />
+  <meta name="description" content="... still think Bayes&#39; theorem is cryptic? read along!">
+  <meta property="og:description" content="... still think Bayes&#39; theorem is cryptic? read along!">
+  <meta name="twitter:description" content="... still think Bayes&#39; theorem is cryptic? read along!">
   <meta name="author" content="Vlas Sokolov"/>
   <link href='https://vlas.dev/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://vlas.dev/categories/" />
+  <meta property="og:url" content="https://vlas.dev/post/bayes-theorem/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vlas Sokolov" />
 
   <meta name="generator" content="Hugo 0.57.2" />
-  <link rel="canonical" href="https://vlas.dev/categories/" />
-  <link rel="alternate" href="https://vlas.dev/categories/index.xml" type="application/rss+xml" title="Vlas Sokolov">
+  <link rel="canonical" href="https://vlas.dev/post/bayes-theorem/" />
+  <link rel="alternate" href="https://vlas.dev/index.xml" type="application/rss+xml" title="Vlas Sokolov">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -154,9 +157,27 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
-              <h1>Categories</h1>
+            <div class="post-heading">
+              <h1>Venn diagrams and Bayes&#39; theorem</h1>
                 
+                  
+                    <h2 class="post-subheading">... still think Bayes&#39; theorem is cryptic? read along!</h2>
+                  
+                
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on June 26, 2017
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (628 words)
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -167,20 +188,155 @@
 
 
     
-
-
-
 <div class="container" role="main">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
-    <article class="post-preview">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>Consider a small town where 1% of the people are active drug users. Aimed with all the power of medical testing and knowledge of Venn diagrams, our goal is to find them!</p>
+
+<pre><code class="language-python">from __future__ import division
+from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib_venn import venn2, venn2_circles
+
+plt.rc('text', usetex=True)
+plt.figure(figsize=(8, 8))
+
+population, drug_chance = 2000, 0.01
+drug_users = population * drug_chance
+clean = population - drug_users
+subsets = (clean, 0, drug_users)
+
+v = venn2(subsets)
+c = venn2_circles(subsets, linestyle='dashed')
+
+# fill the intersection patches
+v.get_patch_by_id('10').set_color('white')
+v.get_patch_by_id('11').set_color('red')
+v.hide_zeroes()
+v.get_label_by_id('B').set_text(r'$\mathrm{Drug~users}$')
+v.get_label_by_id('B').set_fontsize(25)
+v.get_label_by_id('A').set_text(r'$\mathrm{{All~people~({})}}$'.format(population))
+v.get_label_by_id('A').set_fontsize(25)
+plt.show()
+</code></pre>
+
+<p><img src="venn1.png" alt="Setup" /></p>
+
+<p>Inspired by Nixon&rsquo;s late 60&rsquo;s policies, we have developed a test that catches the vile criminals by detecting trace amounts of the substance, but - alas - our pharma R&amp;D department tells us that it has only a 95% success rate. That is, it has a 5% chance to show that a healthy member of the silent majority is a drug abuser and a 5% chance to identify a drug user as being clean.</p>
+
+<p>With this in mind, let&rsquo;s pose a question - if we stop random passerbys and they test positive, what are chances of them being active drug users?</p>
+
+<pre><code class="language-python">from matplotlib import pyplot as plt
+import numpy as np
+from matplotlib_venn import venn3, venn3_circles
+
+test_success = 0.95
+test_failure = 1 - test_success
+
+plt.rc('text', usetex=True)
+plt.figure(figsize=(8, 8))
+
+negative_if_clean = clean * test_success # true negatives
+positive_if_clean = clean * test_failure # false positives
+positive_if_addict = drug_users * test_success # true positives
+negative_if_addict = drug_users * test_failure # false negative - got lucky this time!
+if population &lt; 2000:
+    foo = {'ndigits': 2}
+else:
+    foo = {}
+subsets = [round(i, **foo) for i in [negative_if_clean, 0, negative_if_addict, 
+                          0, positive_if_clean, 0, positive_if_addict]]
+
+v = venn3(subsets, set_labels = ('A', 'B', 'C'))
+c = venn3_circles(subsets, linestyle='dashed')
+
+# fill the intersection patches
+v.get_patch_by_id('10').set_color('white')
+v.get_patch_by_id('111').set_color('red')
+v.get_patch_by_id('101').set_color('blue')
+v.get_patch_by_id('110').set_color('black')
+v.hide_zeroes()
+v.get_label_by_id('B').set_text(r'$\mathrm{Drug~users}$')
+v.get_label_by_id('B').set_fontsize(25)
+v.get_label_by_id('A').set_text(r'$\mathrm{{All~people~({})}}$'.format(population))
+v.get_label_by_id('A').set_fontsize(25)
+v.get_label_by_id('C').set_text(r'$\mathrm{Tested~positive}$')
+v.get_label_by_id('C').set_fontsize(25)
+
+plt.annotate(r'$\mathrm{The~lucky~bastard~that~got~away}$',
+             xy=v.get_label_by_id('110').get_position() - np.array([-0.01, 0]),
+             xytext=(+140,-70), ha='center', textcoords='offset points', size=17,
+             arrowprops=dict(arrowstyle='-&gt;', connectionstyle='arc3, rad=0.2',color='black'))
+
+addicts_all = positive_if_addict + negative_if_addict
+positive_all = positive_if_clean + positive_if_addict
+addict_if_positive = ((positive_if_addict / addicts_all) 
+        * (addicts_all / population) / (positive_all / population) * 100)
+plt.annotate(r'$\mathrm{{Chance~of~catching~a~drug~user~given~a~positive~test:~{:.3f}\%}}$'.format(addict_if_positive),
+             xy=v.get_label_by_id('10').get_position() - np.array([0.3, +0.45]),
+             xytext=(+140,-70), ha='center', textcoords='offset points', size=22)
+
+plt.show()
+</code></pre>
+
+<p><img src="venn1.png" alt="Posterior" /></p>
+
+<p>What you&rsquo;re seeing is a graphical representation of the Bayes&rsquo; Theorem. Out of the people who tested positive, the biggest part (in blue) is due to the drug test failure!</p>
+
+<h3 id="bayes-theorem">Bayes&rsquo; Theorem</h3>
+
+<p>In probability theory, the chance of event A happening given that event B has occured is denoted as</p>
+
+<p>$$P(A \mid B)$$,</p>
+
+<p>and is called conditional probablitiy. In our small example, we were looking for a value of this:</p>
+
+<p>$$P(\mathrm{drug~user}~ | ~\mathrm{positive~test})$$.</p>
+
+<p>Conditional probablility, in Kolmogorov&rsquo;s notation, can be written as a probability of joint events A and B occuring within the sample space of B:</p>
+
+<p>$$ P(A \mid B)=\dfrac{P(A \cup B)}{P(B)},$$</p>
+
+<p>or, in our terms,</p>
+
+<p>$$ P(\mathrm{drug~user}~ | ~\mathrm{positive~test}) = \dfrac{P(\mathrm{drug~user}~ \cup \mathrm{positive~test})}{P(\mathrm{positive~test})} = \dfrac{19}{99 + 19} $$</p>
+
+<p>In the setup for our problem, we are given the success probablity of the positive test for a drug user - the inverse of the conditional probablitiy above. We are getting to the heart of the Bayes&rsquo; theorem: <em>the theorem that tells us how to flip conditional probabilities</em>. Starting from the notation above:</p>
+
+<p>$$ \dfrac{P(A \mid B)}{P(B)} = P(A \cup B) = P(B \cup A) = \dfrac{P(B \mid A)}{P(A)}, $$</p>
+
+<p>It&rsquo;s clear that the inverse conditional probablities relate through the sample space ratio:</p>
+
+<p>$$ P(A \mid B)=\dfrac{P(B \mid A) P(A)}{P(B)} .$$</p>
+
+<p>Bayes&rsquo; theorem is a solution to the prosecutor&rsquo;s fallacy, which, in our case, can be concluded as follows: the fact that the drug test works yields positive 99% of the time on a drug user does not mean that a positive result from the drug test condemns an average person as a drug user.</p>
+
         
-      </div>
-    </article>
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+          
+            <li class="next">
+              <a href="https://vlas.dev/post/testing/" data-toggle="tooltip" data-placement="top" title="New webpage! What can it do?">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
 </div>
-
-
 
     <footer>
   <div class="container">
@@ -238,7 +394,7 @@
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2020
 
           
             &nbsp;&bull;&nbsp;

@@ -5,61 +5,23 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>New webpage! What can it do?</title>
-  <meta property="og:title" content="New webpage! What can it do?" />
-  <meta name="twitter:title" content="New webpage! What can it do?" />
-  <meta name="description" content="Markdown
-
-Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:
-
-$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 , $$
-
-although I can&rsquo;t get inline math mode to render: $x = \frac{1}{2}$ yet.
-
-Using Font Awesome
-
-Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.
-
-
-  Font Awesome provides free, clean, and beautiful icon set
-  Even though the icon set is mainly for web-design...
-  ... it has some academic icons as well
-  and it even supports animated icons!
-">
-  <meta property="og:description" content="Markdown
-
-Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:
-
-$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 , $$
-
-although I can&rsquo;t get inline math mode to render: $x = \frac{1}{2}$ yet.
-
-Using Font Awesome
-
-Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.
-
-
-  Font Awesome provides free, clean, and beautiful icon set
-  Even though the icon set is mainly for web-design...
-  ... it has some academic icons as well
-  and it even supports animated icons!
-">
-  <meta name="twitter:description" content="Markdown
-
-Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:
-
-$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
+  <title>Spectral Likelihoods</title>
+  <meta property="og:title" content="Spectral Likelihoods" />
+  <meta name="twitter:title" content="Spectral Likelihoods" />
+  <meta name="description" content="Notes on probabilistic spectral line regression A disclaimer is in order. It&rsquo;s not like I worked all of the statistics here myself! In fact, I&rsquo;ve never even taken a class in statistics, and had to work it all out basically from scratch. Nevertheless, I feel that proper statistical methods for parameter estimation / model selection are often ignored in the context of fitting spectral lines, at least in radio astronomy.">
+  <meta property="og:description" content="Notes on probabilistic spectral line regression A disclaimer is in order. It&rsquo;s not like I worked all of the statistics here myself! In fact, I&rsquo;ve never even taken a class in statistics, and had to work it all out basically from scratch. Nevertheless, I feel that proper statistical methods for parameter estimation / model selection are often ignored in the context of fitting spectral lines, at least in radio astronomy.">
+  <meta name="twitter:description" content="Notes on probabilistic spectral line regression A disclaimer is in order. It&rsquo;s not like I worked all of the statistics here myself! In fact, I&rsquo;ve never even taken a class in statistics, …">
   <meta name="author" content="Vlas Sokolov"/>
   <link href='https://vlas.dev/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://vlas.dev/post/testing/" />
+  <meta property="og:url" content="https://vlas.dev/post/spectral-likelihoods/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vlas Sokolov" />
 
   <meta name="generator" content="Hugo 0.57.2" />
-  <link rel="canonical" href="https://vlas.dev/post/testing/" />
+  <link rel="canonical" href="https://vlas.dev/post/spectral-likelihoods/" />
   <link rel="alternate" href="https://vlas.dev/index.xml" type="application/rss+xml" title="Vlas Sokolov">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -196,7 +158,7 @@ $$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             <div class="post-heading">
-              <h1>New webpage! What can it do?</h1>
+              <h1>Spectral Likelihoods</h1>
                 
                 
                   <span class="post-meta">
@@ -206,7 +168,7 @@ $$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
   
   
   &nbsp;|&nbsp;
-  <i class="fa fa-clock-o"></i> 1 minutes (172 words)
+  <i class="fa fa-clock-o"></i> 5 minutes (965 words)
   
   
 </span>
@@ -226,34 +188,79 @@ $$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-        <h2 id="markdown">Markdown</h2>
+        
 
-<p>Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:</p>
+<h1 id="notes-on-probabilistic-spectral-line-regression">Notes on probabilistic spectral line regression</h1>
 
-<p>$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 , $$</p>
+<p>A disclaimer is in order. It&rsquo;s not like I worked all of the statistics here myself! In fact, I&rsquo;ve never even taken a class in statistics, and had to work it all out basically from scratch. Nevertheless, I feel that proper statistical methods for parameter estimation / model selection are often ignored in the context of fitting spectral lines, at least in radio astronomy. These haphazardly written notes thus serve one purpuse - to bring some sense and sanity into the basic questions I had when I started my PhD, questions like &ldquo;How can we be sure we have a line detection?&rdquo; or &ldquo;How can we be certain that there&rsquo;s a second component in my spectrum&rdquo;?</p>
 
-<p>although I can&rsquo;t get inline math mode to render: $x = \frac{1}{2}$ yet.</p>
+<p>I made use of a plethora of resources, software packages, and references to compile this document. I will try to properly cite good reviews on the topic at the end of each section or in the text directly.</p>
 
-<h2 id="using-font-awesome">Using Font Awesome</h2>
+<p>That being said, I do not know of anyone doing this kind of analysis before. As far as I know, the question of measuring spectral multiplicity along the line of sight, especially in spectral mapping, was never addressed before in such a scrutinizing manner.</p>
 
-<p>Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.</p>
+<p>I will try to supplement the notes with visual examples in Python - at least for me, statistics is better learned when it is visualized.</p>
 
-<ul class="fa-ul">
-  <li><i class="fa-li fa fa-graduation-cap"></i><a href="https://fontawesome.com/">Font Awesome</a> provides free, clean, and beautiful icon set</li>
-  <li><i class="fa-li fa fa-btc"></i>Even though the icon set is mainly for web-design...</li>
-  <li><i class="fa-li fa fa-graduation-cap"></i>... it has some academic icons as well</li>
-  <li><i class="fa-li fa fa-bomb fa-spin"></i>and it even supports animated icons!</li>
-</ul>
+<h2 id="part-i-if-it-emits-i-fits">Part I: If it Emits I Fits</h2>
 
-<h2 id="interactive-figures">Interactive figures</h2>
+<blockquote>
+<p>Our premise is as simple as it is painfully familiar to any radio astronomer: what is the probability of obtaining a given spectrum?</p>
+</blockquote>
 
-<p>With <a href="https://plot.ly/">plotly</a>, plugging in interactive visualizations has never been easier! Plotly itself is a high-level graphical library built around <a href="https://d3js.org/">D3.js</a>, a modern and fast data visualization library. One day I will learn JavaScript - so far I&rsquo;ve just written the figure below in Python-based plotly wrapper.</p>
+<p>Suppose we are sampling a brightness value for i&rsquo;th channel as a random draw. Assuming that that particular channel frequency would correspond to a combination of an (unspecified yet) astronomical signal of $s_i$ strength with some Gaussian noise sprinkled on top of it, the drawing notation can be written as $y_i \sim \mathcal{N}(s_i,\,\sigma^{2}_i)$. The corresponding probablity density function for the distribution is</p>
 
-<div>
-    <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~vlas-sokolov/5.embed"></iframe>
-</div>
+<p>$$ P(y_i \mid s_i,\, \sigma_i^2) = \frac{1}{\sqrt{2 \pi} \sigma_i} \exp\Big(-\frac{(y_i - s_i)^2}{2{\sigma_i}^2}\Big). $$</p>
 
-<p>Plotly seems to take its sweet time loading, so for figures that don&rsquo;t need to be three-dimensional I should probably just stick to <a href="https://bokeh.pydata.org/en/latest/">bokeh</a>.</p>
+<p>The probability of obtaning a full spectrum $D = {y_1, y_2, &hellip;, y_N}$ for a true astronomical source component $S = {s_1, s_2, &hellip;, s_N}$ under the above assumptions is a product of individual (assumed to be i.i.d.) probabilities:</p>
+
+<p>$$ P(D \mid S) = \prod_{i=1}^N P(y_i \mid s_i) $$</p>
+
+<p>From observervers&rsquo; point of view, never having the true knowledge of the source component $S$, the $S$ term is better represented by a physical model describing the spectrum, a model that can be written as $\mathcal{M}(\theta, i)$, thus defining the amplitudes for each channel. From a statistical point of view, our chief interest lies in the likelihood fucntion - the probablity that a certain parameter choice $\theta$ describes a set of observational data $D$. Plugging in our model specification into the equation above yields</p>
+
+<p>$$ \mathcal{L}(\theta) \equiv P(\theta \mid D) = \prod_{i=1}^N \frac{1}{\sqrt{2 \pi} \sigma_i} \exp\Big(-\frac{[y_i - \mathcal{M}(\theta, i)]^2}{2{\sigma_i}^2}\Big). $$</p>
+
+<p>It is probably abundantly clear at this point that the question we&rsquo;re building up to is:</p>
+
+<blockquote>
+<p>Given the measurement set $D$, what is the parameter set that, for a given model, maximizes the likelihood function?</p>
+</blockquote>
+
+<p>If we want to be picky about the notations, we&rsquo;ll say that we&rsquo;re on a hunt for a maximum likelihood estimator $\hat \theta = \underset{\theta}{\arg\max} \; \mathcal{L}(\theta)$ for the rest of this part.</p>
+
+<p>It should also be clear that maximizing the likelihood is <del>a correct</del> another nomenclature for a commonly used &ldquo;chi-square minimization&rdquo; procedure in astronomy, because</p>
+
+<p>$$ \ln \mathcal{L}(\theta) = \sum_{i=1}^N \ln \Big[ \frac{1}{\sqrt{2 \pi} \sigma_i} \exp\Big(-\frac{[y_i - \mathcal{M}(\theta, i)]^2}{2{\sigma<em>i}^2}\Big) \Big] = -\sum</em>{i=1}^N \ln \sqrt{2 \pi \sigma<em>i^2} - \frac{1}{2} \sum</em>{i=1}^N \Big(\frac{y_i - \mathcal{M}(\theta, i)}{\sigma<em>i}\Big)^2 \Big] = -\sum</em>{i=1}^N \ln \sqrt{2 \pi \sigma_i^2} - \frac{1}{2} \chi^2, $$</p>
+
+<p>and therefore, minimizing the <del>infamous</del> $\chi^2$ term would lead to maximization of the likelihood function.</p>
+
+<p>Let us consider a few special - and useful - cases.</p>
+
+<h3 id="1-uniform-known-noise-variance-a-simple-gaussian-example">1. Uniform, known, noise variance (a simple gaussian example)</h3>
+
+<p>If $\forall i, j: \sigma_i = \sigma_j = \sigma$ holds, the log-likelihood funcion assumes a simple form that mainly depends on the sum of squared residuals:</p>
+
+<p>$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 . $$</p>
+
+<p>The constant term preceding the summation operator, normalising the likelihood function, is often dropped for likelihood maximization problems.</p>
+
+<h3 id="2-sum-over-spectral-lines-with-individual-noise-variance-ammonia-case-study">2. Sum over spectral lines with individual noise variance (ammonia case study)</h3>
+
+<p>How does the expression above change if we fit several spectral lines together, each with its own noise level? Here&rsquo;s an example for two, definitely not ammonia (1, 1) and (2, 2) inversion, lines. Every channel of a &ldquo;combined&rdquo; spectrum of $N<em>{(1,1)}+N</em>{(2,2)}$ length belongs to either one line or the other, and is described by a spectral model of the $\mathcal{M}(\theta, i)$ form:</p>
+
+<p>$$ \ln \mathcal{L}(\theta) = -N<em>{(1,1)} \ln \sqrt{2 \pi \sigma</em>{(1,1)}^2} -N<em>{(2,2)} \ln \sqrt{2 \pi \sigma</em>{(2,2)}^2} - \frac{1}{2\sigma<em>{(1,1)}^2} \sum</em>{i=1}^{N_{(1,1)}} \Big(y<em>i - \mathcal{M}(\theta, i)\Big)^2 - \frac{1}{2\sigma</em>{(2,2)}^2} \sum<em>{i=N</em>{(1,1)}+1}^{N<em>{(1,1)}+N</em>{(2,2)}} \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 .$$</p>
+
+<p>The takeaway point here is that the normalization constants drop out as they are not model-dependent. In other words, we can simply use the summation terms from log-likelihood formula, as long as they are weighted properly by the</p>
+
+<h3 id="3-unknown-noise-variance">3. Unknown noise variance</h3>
+
+<p>In principle, the noise variance can be left unknown, and can simple by a free parameter in the model. This is not a very orthodox approach in radio astronomy, but Gaussian regression with unknown noise variance is a textbook example in MLE methods.</p>
+
+<p>This section is to be written yet, but then, first of all, why would do need it? Two reasons:</p>
+
+<ol>
+<li>Sometimes you can&rsquo;t have enough line-free channels to constrain the noise rms. I&rsquo;ve shown this in some other notebook, by running MC simulated spectra and measuring the rms of the noise rms&hellip;</li>
+<li>Perhaps the Bayesian evidence calculations and the Bayes factors are more reliable this way?</li>
+</ol>
+
 
         
 
@@ -262,6 +269,10 @@ $$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
 
       
         <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://vlas.dev/post/mach-errors/" data-toggle="tooltip" data-placement="top" title="Molecular cloud turbulance and propagation of uncertainties">&larr; Previous Post</a>
+            </li>
           
           
             <li class="next">
@@ -337,7 +348,7 @@ $$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - …">
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2020
 
           
             &nbsp;&bull;&nbsp;

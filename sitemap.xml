@@ -3,56 +3,51 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vlas-sokolov.github.io/post/cloudh-ppv/</loc>
+    <loc>https://vlas.dev/post/</loc>
     <lastmod>2018-09-19T16:01:18+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/post/urban-growth/</loc>
+    <loc>https://vlas.dev/post/cloudh-ppv/</loc>
+    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vlas.dev/</loc>
+    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vlas.dev/post/urban-growth/</loc>
     <lastmod>2018-08-20T15:27:23+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/post/gaia-dr2-hrd/</loc>
+    <loc>https://vlas.dev/post/gaia-dr2-hrd/</loc>
     <lastmod>2018-05-09T16:06:27+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/page/about/</loc>
+    <loc>https://vlas.dev/page/about/</loc>
     <lastmod>2018-03-28T16:13:53+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/post/testing/</loc>
+    <loc>https://vlas.dev/page/</loc>
+    <lastmod>2018-03-28T16:13:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vlas.dev/post/testing/</loc>
     <lastmod>2018-03-27T15:51:20+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/categories/</loc>
-    <priority>0</priority>
+    <loc>https://vlas.dev/categories/</loc>
   </url>
   
   <url>
-    <loc>https://vlas-sokolov.github.io/page/</loc>
-    <lastmod>2018-03-28T16:13:53+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vlas-sokolov.github.io/post/</loc>
-    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vlas-sokolov.github.io/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://vlas-sokolov.github.io/</loc>
-    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
-    <priority>0</priority>
+    <loc>https://vlas.dev/tags/</loc>
   </url>
   
 </urlset>

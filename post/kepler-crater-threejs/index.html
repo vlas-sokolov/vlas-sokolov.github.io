@@ -5,21 +5,31 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Categories</title>
-  <meta property="og:title" content="Categories" />
-  <meta name="twitter:title" content="Categories" />
+  <title>Lunar craters in three.js, DRAFT</title>
+  <meta property="og:title" content="Lunar craters in three.js, DRAFT" />
+  <meta name="twitter:title" content="Lunar craters in three.js, DRAFT" />
+  <meta name="description" content="Lunar craters in three.js!    View GeoTIFF files as an interactive 3D mesh in WebGL. Currently, shows the lunar Kepler crater.
+I want to give it a spin (pun intended), how do I do that? However you like! ¯\_(ツ)_/¯
+I tend to run a python webserver with python -m http.server in the repo folder and it just works.
+Data references  The GeoTIFF file was reprojected (no elliptical craters here) from the Lunar Orbiter Laser Altimeter (LOLA) data from NASA&rsquo;s Lunar Reconnaissance Orbiter spacecraft.">
+  <meta property="og:description" content="Lunar craters in three.js!    View GeoTIFF files as an interactive 3D mesh in WebGL. Currently, shows the lunar Kepler crater.
+I want to give it a spin (pun intended), how do I do that? However you like! ¯\_(ツ)_/¯
+I tend to run a python webserver with python -m http.server in the repo folder and it just works.
+Data references  The GeoTIFF file was reprojected (no elliptical craters here) from the Lunar Orbiter Laser Altimeter (LOLA) data from NASA&rsquo;s Lunar Reconnaissance Orbiter spacecraft.">
+  <meta name="twitter:description" content="Lunar craters in three.js!    View GeoTIFF files as an interactive 3D mesh in WebGL. Currently, shows the lunar Kepler crater.
+I want to give it a spin (pun intended), how do I do that? However you …">
   <meta name="author" content="Vlas Sokolov"/>
   <link href='https://vlas.dev/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://vlas.dev/categories/" />
+  <meta property="og:url" content="https://vlas.dev/post/kepler-crater-threejs/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vlas Sokolov" />
 
   <meta name="generator" content="Hugo 0.57.2" />
-  <link rel="canonical" href="https://vlas.dev/categories/" />
-  <link rel="alternate" href="https://vlas.dev/categories/index.xml" type="application/rss+xml" title="Vlas Sokolov">
+  <link rel="canonical" href="https://vlas.dev/post/kepler-crater-threejs/" />
+  <link rel="alternate" href="https://vlas.dev/index.xml" type="application/rss+xml" title="Vlas Sokolov">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -154,9 +164,23 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
-              <h1>Categories</h1>
+            <div class="post-heading">
+              <h1>Lunar craters in three.js, DRAFT</h1>
                 
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on August 19, 2020
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 1 minutes (114 words)
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -167,20 +191,60 @@
 
 
     
-
-
-
 <div class="container" role="main">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
-    <article class="post-preview">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
         
-      </div>
-    </article>
-  </div>
+
+<h1 id="lunar-craters-in-three-js">Lunar craters in three.js!</h1>
+
+<div>
+    <iframe width="900" height="800" frameborder="0" scrolling="no" src="https://vlas.dev/html/kepler-crater-threejs.html"></iframe>
 </div>
 
+<p>View GeoTIFF files as an interactive 3D mesh in WebGL. Currently, shows the lunar <a href="https://en.wikipedia.org/wiki/Kepler_(lunar_crater)">Kepler crater</a>.</p>
 
+<h3 id="i-want-to-give-it-a-spin-pun-intended-how-do-i-do-that">I want to give it a spin (pun intended), how do I do that?</h3>
+
+<p>However you like! ¯\_(ツ)_/¯</p>
+
+<p>I tend to run a python webserver with <code>python -m http.server</code> in the repo folder and it <em>just works</em>.</p>
+
+<h3 id="data-references">Data references</h3>
+
+<ul>
+<li>The GeoTIFF file was reprojected (no elliptical craters here) from the Lunar Orbiter Laser Altimeter (LOLA) data from NASA&rsquo;s Lunar Reconnaissance Orbiter spacecraft. The repo that spews those <code>.tiff</code> files is <a href="https://github.com/vlas-sokolov/moon">here</a>.</li>
+<li>Explanation and full list of data references for LOLA dataset: <a href="https://astrogeology.usgs.gov/search/map/Moon/LRO/LOLA/Lunar_LRO_LOLA_Global_LDEM_118m_Mar2014">link</a></li>
+<li>Tables of lunar features taken from the <a href="https://planetarynames.wr.usgs.gov/">International Astronomical Union Planetary Gazetteer</a>.</li>
+</ul>
+
+
+        
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://vlas.dev/post/cloudh-ppv/" data-toggle="tooltip" data-placement="top" title="PPV diagram for IRDC G035.39-00.39">&larr; Previous Post</a>
+            </li>
+          
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
+  </div>
+</div>
 
     <footer>
   <div class="container">
@@ -238,7 +302,7 @@
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2020
 
           
             &nbsp;&bull;&nbsp;

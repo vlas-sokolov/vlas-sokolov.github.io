@@ -5,21 +5,27 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 
-  <title>Categories</title>
-  <meta property="og:title" content="Categories" />
-  <meta name="twitter:title" content="Categories" />
+  <title>Molecular cloud turbulance and propagation of uncertainties</title>
+  <meta property="og:title" content="Molecular cloud turbulance and propagation of uncertainties" />
+  <meta name="twitter:title" content="Molecular cloud turbulance and propagation of uncertainties" />
+  <meta name="description" content="&hellip; where we derive an analytical expression for the Mach number uncertainties from non-linear regression.
+Accounting for the channel width &ldquo;broadening&rdquo; effects - we subtract the channel width from the observed full width at half-max maximum of the line (in quadrature): $\Delta V{FWHM} = \sqrt{\Delta V{obs}^2 - \Delta V_{chan}^2}$. To find the degree of non-thermal motions, we also remove the thermal broadening component to get the non-thermal velocity dispersion from the observed line width (well we&rsquo;re also switching over to using velocity dispersions):">
+  <meta property="og:description" content="&hellip; where we derive an analytical expression for the Mach number uncertainties from non-linear regression.
+Accounting for the channel width &ldquo;broadening&rdquo; effects - we subtract the channel width from the observed full width at half-max maximum of the line (in quadrature): $\Delta V{FWHM} = \sqrt{\Delta V{obs}^2 - \Delta V_{chan}^2}$. To find the degree of non-thermal motions, we also remove the thermal broadening component to get the non-thermal velocity dispersion from the observed line width (well we&rsquo;re also switching over to using velocity dispersions):">
+  <meta name="twitter:description" content="&hellip; where we derive an analytical expression for the Mach number uncertainties from non-linear regression.
+Accounting for the channel width &ldquo;broadening&rdquo; effects - we subtract the …">
   <meta name="author" content="Vlas Sokolov"/>
   <link href='https://vlas.dev/img/favicon.ico' rel='icon' type='image/x-icon'/>
   <meta property="og:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:image" content="https://vlas.dev/img/iram30m.jpg" />
   <meta name="twitter:card" content="summary" />
-  <meta property="og:url" content="https://vlas.dev/categories/" />
+  <meta property="og:url" content="https://vlas.dev/post/mach-errors/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Vlas Sokolov" />
 
   <meta name="generator" content="Hugo 0.57.2" />
-  <link rel="canonical" href="https://vlas.dev/categories/" />
-  <link rel="alternate" href="https://vlas.dev/categories/index.xml" type="application/rss+xml" title="Vlas Sokolov">
+  <link rel="canonical" href="https://vlas.dev/post/mach-errors/" />
+  <link rel="alternate" href="https://vlas.dev/index.xml" type="application/rss+xml" title="Vlas Sokolov">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css" integrity="sha384-wITovz90syo1dJWVh32uuETPVEtGigN07tkttEqPv+uR2SE/mbQcG7ATL28aI9H0" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
@@ -154,9 +160,23 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            <div class="categories-heading">
-              <h1>Categories</h1>
+            <div class="post-heading">
+              <h1>Molecular cloud turbulance and propagation of uncertainties</h1>
                 
+                
+                  <span class="post-meta">
+  
+  
+  <i class="fa fa-calendar-o"></i>&nbsp;Posted on March 27, 2018
+  
+  
+  &nbsp;|&nbsp;
+  <i class="fa fa-clock-o"></i> 3 minutes (474 words)
+  
+  
+</span>
+
+
                 
             </div>
           </div>
@@ -167,20 +187,64 @@
 
 
     
-
-
-
 <div class="container" role="main">
-  <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1"> 
-    <article class="post-preview">
-      <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="row">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+      <article role="main" class="blog-post">
+        <p>&hellip; where we derive an analytical expression for the Mach number uncertainties from non-linear regression.</p>
+
+<p>Accounting for the channel width &ldquo;broadening&rdquo; effects - we subtract the channel width from the observed full width at half-max maximum of the line (in quadrature): $\Delta V<em>{FWHM} = \sqrt{\Delta V</em>{obs}^2 - \Delta V_{chan}^2}$. To find the degree of non-thermal motions, we also remove the thermal broadening component to get the non-thermal velocity dispersion from the observed line width (well we&rsquo;re also switching over to using velocity dispersions):</p>
+
+<p>$$ \sigma<em>{nt} = \sqrt{\sigma</em>{obs}^2 - \frac{k<em>B T</em>{kin}}{m_{\mathrm{NH<em>3}}} - \sigma</em>{chan}^2}, $$</p>
+
+<p>where $\sigma<em>{chan} = \Delta V</em>{chan} / \sqrt{8 \ln{2}}$ is a notation introduced specifically to wreak confusion. A useful way to quantify the degree of the non-thermal motions in the gas is to compare those against the local sonic gas speed $c_s \equiv \sqrt{\frac{k<em>B T</em>{kin}}{m<em>{gas}}}$, where $m</em>{gas}$, an average mass of the particle in the gas medium, is commonly taken to be $2.33$ a.m.u. So then a sonic Mach number could be computed as the ratio of the two quantities (ignoring the fact that some people throw in an extra $\sqrt{3}$ factor there), is $\mathcal{M} \equiv \frac{\sigma_{nt}}{c_s}$.</p>
+
+<p>So we&rsquo;ve got some idea on what the kinetic temperature in the gas is, and the generic fitting routine we use spits put uncertainties on $\sigma_{nt}$ - what&rsquo;s the uncertainty on the Mach number then?</p>
+
+<p>Assuming the uncertainties on $T<em>{kin}$ and $\sigma</em>{nt}$ (let&rsquo;s denote them as $\sigma<em>{T</em>{kin}}$ and, again just to confuse people with all the nested subscripts, $\sigma<em>{\sigma</em>{obs}}$) are uncorrelated, we go to <del>Wikipedia</del>  a credible and well-known source to find that formula you should have remembered at this point while brushing the dust off from whatever deep dark corner of your mind the Calculus I lectures ran off to slowly rot away. Aaaand there it is:</p>
+
+<p>$$ \sigma<em>{\mathcal{M}} = \sqrt{\sigma</em>{\sigma<em>{obs}}^2 \big[\frac{\partial \mathcal{M}}{\partial {\sigma</em>{obs}}}\big]^2 + \sigma<em>{T</em>{kin}}^2 \big[\frac{\partial \mathcal{M}}{\partial {T_{kin}}}\big]^2}$$</p>
+
+<p><img src="losgehts.gif" alt="dive in" title="Because using Wolfram Alpha takes too little time!" /></p>
+
+<p>$$ \sigma<em>{\mathcal{M}} = \sqrt{\sigma</em>{\sigma<em>{obs}}^2 \big[\frac{\partial \mathcal{M}}{\partial {\sigma</em>{obs}}}\big]^2 + \sigma<em>{T</em>{kin}}^2 \big[\frac{\partial \mathcal{M}}{\partial {T<em>{kin}}}\big]^2} = \sqrt{\sigma</em>{\sigma<em>{obs}}^2 \big[\frac{\partial}{\partial {\sigma</em>{obs}}} \sqrt{\frac{\sigma_{obs}^2 - k<em>B T</em>{kin} / m_{\mathrm{NH<em>3}} - \sigma</em>{chan}^2}{k<em>B T</em>{kin} / m<em>{gas}}} \big]^2 + \sigma</em>{T<em>{kin}}^2 \Big[\frac{\partial}{\partial {T</em>{kin}}} \sqrt{\frac{\sigma_{obs}^2 - k<em>B T</em>{kin} / m_{\mathrm{NH<em>3}} - \sigma</em>{chan}^2}{k<em>B T</em>{kin} / m<em>{gas}}} \Big]^2} = \Bigg(\sigma</em>{\sigma<em>{obs}}^2 \Big[\frac{1}{2} \big(\frac{\sigma</em>{obs}^2 - k<em>B T</em>{kin} / m_{\mathrm{NH<em>3}} - \sigma</em>{chan}^2}{k<em>B T</em>{kin} / m_{gas}}\big)^{- \frac{1}{2}} (k<em>B T</em>{kin} / m<em>{gas})^{-1} 2 \sigma</em>{obs} \Big]^2 + \sigma<em>{T</em>{kin}}^2 \Big[\frac{1}{2} \big(\frac{\sigma_{obs}^2 - k<em>B T</em>{kin} / m_{\mathrm{NH<em>3}} - \sigma</em>{chan}^2}{k<em>B T</em>{kin} / m<em>{gas}}\big)^{- \frac{1}{2}} \big(- \frac{\sigma</em>{obs}^2 - \sigma_{chan}^2}{k<em>B T</em>{kin}^2 / m_{gas}}\big)^2\Big]^2 \Bigg)^{\frac{1}{2}} = \frac{1}{2} \sqrt{\frac{k<em>B T</em>{kin} / m<em>{gas}}{(\sigma</em>{obs}^2 - \sigma_{chan}^2) - k<em>B T</em>{kin} / m_{\mathrm{NH<em>3}}}} \Bigg( \frac{4 \sigma</em>{\sigma<em>{obs}}^2 \sigma</em>{obs}^2 T<em>{kin}^2 + \sigma</em>{T<em>{kin}}^2 (\sigma</em>{obs}^2 - \sigma_{chan}^2)^2}{k<em>B^2 T</em>{kin}^4 / m_{gas}^2} \Bigg)^{\frac{1}{2}}, $$</p>
+
+<p>which finally reduces to</p>
+
+<p>$$ \sigma<em>{\mathcal{M}} = \frac{\sqrt{m</em>{gas} m_{\mathrm{NH<em>3}}}}{2} \sqrt{\frac{\sigma</em>{T<em>{kin}}^2 (\sigma</em>{obs}^2 - \sigma<em>{chan}^2)^2 + 4 \sigma</em>{\sigma<em>{obs}}^2 \sigma</em>{obs}^2 T_{kin}^2}{k<em>B T</em>{kin}^3 (m_{\mathrm{NH<em>3}} (\sigma</em>{obs}^2 - \sigma_{chan}^2) - k<em>B T</em>{kin})}}. $$</p>
+
+<p>While this does not <a href="http://www.smbc-comics.com/comic/2013-01-20">make me a mathematician</a>, at least it is more robust than blindly trusting the numerical error propagations?</p>
+
+
         
-      </div>
-    </article>
+
+        
+      </article>
+
+      
+        <ul class="pager blog-pager">
+          
+            <li class="previous">
+              <a href="https://vlas.dev/post/wips/" data-toggle="tooltip" data-placement="top" title="Work In Progress">&larr; Previous Post</a>
+            </li>
+          
+          
+            <li class="next">
+              <a href="https://vlas.dev/post/spectral-likelihoods/" data-toggle="tooltip" data-placement="top" title="Spectral Likelihoods">Next Post &rarr;</a>
+            </li>
+          
+        </ul>
+      
+
+
+      
+        
+        
+      
+
+    </div>
   </div>
 </div>
-
-
 
     <footer>
   <div class="container">
@@ -238,7 +302,7 @@
           
 
           &nbsp;&bull;&nbsp;
-          2018
+          2020
 
           
             &nbsp;&bull;&nbsp;
