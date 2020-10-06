@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Vlas Sokolov</title>
@@ -8,11 +8,7 @@
     <language>en-us</language>
     <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
     <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
-    <lastBuildDate>Wed, 19 Sep 2018 16:01:18 +0200</lastBuildDate>
-    
-	<atom:link href="https://vlas.dev/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 19 Sep 2018 16:01:18 +0200</lastBuildDate><atom:link href="https://vlas.dev/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tangled velocity structure in a massive stellar nursery</title>
       <link>https://vlas.dev/post/cloudh-ppv/</link>
@@ -20,9 +16,7 @@
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/post/cloudh-ppv/</guid>
       <description>&lt;p&gt;The figure below is an interactive supplement for my &lt;a href=&#34;https://iopscience.iop.org/article/10.3847/1538-4357/aafaff&#34;&gt;Sokolov et al. (2019)&lt;/a&gt; paper, where we used unsupervised hierarchical clustering algorithm to disentangle complex dynamics within a massive molecular cloud.&lt;/p&gt;
-
 &lt;p&gt;The figure, made in &lt;code&gt;plotly&lt;/code&gt;, is a position-position-velocity diagram of the ammonia-derived kinematics within a massive filamentary infrared dark cloud G035.39-00.33. The velocity components identified with &lt;a href=&#34;http://ascl.net/2003.003&#34;&gt;acorns&lt;/a&gt; are shown in different colors.&lt;/p&gt;
-
 &lt;div&gt;
     &lt;iframe width=&#34;900&#34; height=&#34;800&#34; frameborder=&#34;0&#34; scrolling=&#34;no&#34; src=&#34;./html/g35-ppv-acorns.html&#34;&gt;&lt;/iframe&gt;
 &lt;/div&gt;</description>
@@ -52,12 +46,9 @@
       <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/page/about/</guid>
-      <description>img {border-radius: 50%;}    A data scientist, software developer, and an astrophysicist (not necessarily in that order) based in Munich, Germany. I enjoy tinkering with data analysis, statistical methods, and data visualization.
-Work Experience    Data Engineer (2018 - current) INNOSPOT GmbH
-     Doctoral Researcher (2014 - 2018) Max Planck Institute for Extraterrestrial Physics
- 
- 
-Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>
+      <description>img {border-radius: 55%;}    A data scientist, software developer, and an astrophysicist (not necessarily in that order) based in Munich, Germany. I enjoy tinkering with data analysis, statistical methods, and data visualization. Work Experience    Data Scientist (2020 - current) Solita
+     Data Engineer (2018 - 2020) INNOSPOT GmbH
+     Doctoral Researcher (2014 - 2018) Max Planck Institute for Extraterrestrial Physics</description>
     </item>
     
     <item>
@@ -67,17 +58,11 @@ Interests Galactic star formation in infrared dark clouds Bayesian inference, da
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/post/testing/</guid>
       <description>&lt;h2 id=&#34;markdown&#34;&gt;Markdown&lt;/h2&gt;
-
 &lt;p&gt;Posts in Hugo are written in Markdown, and MathJax should be enabled by default, so LaTeX should get rendered:&lt;/p&gt;
-
 &lt;p&gt;$$ \ln \mathcal{L}(\theta) = -N \ln \sqrt{2 \pi \sigma^2} - \frac{1}{2\sigma^2} \sum_{i=1}^N \Big(y_i - \mathcal{M}(\theta, i)\Big)^2 , $$&lt;/p&gt;
-
 &lt;p&gt;although I can&amp;rsquo;t get inline math mode to render: $x = \frac{1}{2}$ yet.&lt;/p&gt;
-
 &lt;h2 id=&#34;using-font-awesome&#34;&gt;Using Font Awesome&lt;/h2&gt;
-
 &lt;p&gt;Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.&lt;/p&gt;
-
 &lt;ul class=&#34;fa-ul&#34;&gt;
   &lt;li&gt;&lt;i class=&#34;fa-li fa fa-graduation-cap&#34;&gt;&lt;/i&gt;&lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; provides free, clean, and beautiful icon set&lt;/li&gt;
   &lt;li&gt;&lt;i class=&#34;fa-li fa fa-btc&#34;&gt;&lt;/i&gt;Even though the icon set is mainly for web-design...&lt;/li&gt;

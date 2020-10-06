@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Pages on Vlas Sokolov</title>
@@ -8,23 +8,16 @@
     <language>en-us</language>
     <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
     <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
-    <lastBuildDate>Wed, 28 Mar 2018 16:13:53 +0200</lastBuildDate>
-    
-	<atom:link href="https://vlas.dev/page/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 28 Mar 2018 16:13:53 +0200</lastBuildDate><atom:link href="https://vlas.dev/page/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>About</title>
       <link>https://vlas.dev/page/about/</link>
       <pubDate>Wed, 28 Mar 2018 16:13:53 +0200</pubDate>
       <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
       <guid>https://vlas.dev/page/about/</guid>
-      <description>img {border-radius: 50%;}    A data scientist, software developer, and an astrophysicist (not necessarily in that order) based in Munich, Germany. I enjoy tinkering with data analysis, statistical methods, and data visualization.
-Work Experience    Data Engineer (2018 - current) INNOSPOT GmbH
-     Doctoral Researcher (2014 - 2018) Max Planck Institute for Extraterrestrial Physics
- 
- 
-Interests Galactic star formation in infrared dark clouds Bayesian inference, data analysis/visualisation, and machine learning Hiking, backpacking, photography   Education    Ph.</description>
+      <description>img {border-radius: 55%;}    A data scientist, software developer, and an astrophysicist (not necessarily in that order) based in Munich, Germany. I enjoy tinkering with data analysis, statistical methods, and data visualization. Work Experience    Data Scientist (2020 - current) Solita
+     Data Engineer (2018 - 2020) INNOSPOT GmbH
+     Doctoral Researcher (2014 - 2018) Max Planck Institute for Extraterrestrial Physics</description>
     </item>
     
   </channel>
