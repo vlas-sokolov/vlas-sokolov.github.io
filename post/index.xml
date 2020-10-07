@@ -54,7 +54,7 @@
 &lt;p&gt;Markdown supports html-code blocks, so we can take advantage of the state-of-the-art web-design features.&lt;/p&gt;
 &lt;ul class=&#34;fa-ul&#34;&gt;
   &lt;li&gt;&lt;i class=&#34;fa-li fa fa-graduation-cap&#34;&gt;&lt;/i&gt;&lt;a href=&#34;https://fontawesome.com/&#34;&gt;Font Awesome&lt;/a&gt; provides free, clean, and beautiful icon set&lt;/li&gt;
-  &lt;li&gt;&lt;i class=&#34;fa-li fa fa-btc&#34;&gt;&lt;/i&gt;Even though the icon set is mainly for web-design...&lt;/li&gt;
+  &lt;li&gt;&lt;i class=&#34;fa-li fab fa-btc&#34;&gt;&lt;/i&gt;Even though the icon set is mainly for web-design...&lt;/li&gt;
   &lt;li&gt;&lt;i class=&#34;fa-li fa fa-graduation-cap&#34;&gt;&lt;/i&gt;... it has some academic icons as well&lt;/li&gt;
   &lt;li&gt;&lt;i class=&#34;fa-li fa fa-bomb fa-spin&#34;&gt;&lt;/i&gt;and it even supports animated icons!&lt;/li&gt;
 &lt;/ul&gt;</description>
