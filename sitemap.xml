@@ -3,17 +3,22 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://vlas.dev/post/</loc>
-    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
+    <loc>https://vlas.dev/post/ec2-vimfrastructure/</loc>
+    <lastmod>2020-10-22T10:31:53+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://vlas.dev/post/cloudh-ppv/</loc>
-    <lastmod>2018-09-19T16:01:18+02:00</lastmod>
+    <loc>https://vlas.dev/post/</loc>
+    <lastmod>2020-10-22T10:31:53+02:00</lastmod>
   </url>
   
   <url>
     <loc>https://vlas.dev/</loc>
+    <lastmod>2020-10-22T10:31:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://vlas.dev/post/cloudh-ppv/</loc>
     <lastmod>2018-09-19T16:01:18+02:00</lastmod>
   </url>
   

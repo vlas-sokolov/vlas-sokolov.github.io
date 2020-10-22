@@ -8,7 +8,16 @@
     <language>en-us</language>
     <managingEditor>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</managingEditor>
     <webMaster>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</webMaster>
-    <lastBuildDate>Wed, 19 Sep 2018 16:01:18 +0200</lastBuildDate><atom:link href="https://vlas.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 22 Oct 2020 10:31:53 +0200</lastBuildDate><atom:link href="https://vlas.dev/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>EC2 Vimfrastructure</title>
+      <link>https://vlas.dev/post/ec2-vimfrastructure/</link>
+      <pubDate>Thu, 22 Oct 2020 10:31:53 +0200</pubDate>
+      <author>vlas.sokolov@mpg-alumni.de (Vlas Sokolov)</author>
+      <guid>https://vlas.dev/post/ec2-vimfrastructure/</guid>
+      <description>Jupiter notebooks from an EC2 server! I use AWS EC2 instances quite a bit - the headless, Linux AMI kind. The kind where the first ssh login lands you in a bare and minimalistic system and gives a distinct metallic aftertaste. The kind that I - grown soft with friendly UIs and cozy zsh themes - can&amp;rsquo;t use any longer without daydreaming of a keyboard flying out the window. So, mostly for self-use, here&amp;rsquo;s how I&amp;rsquo;ve set up the recent EC2 server.</description>
+    </item>
+    
     <item>
       <title>Tangled velocity structure in a massive stellar nursery</title>
       <link>https://vlas.dev/post/cloudh-ppv/</link>
